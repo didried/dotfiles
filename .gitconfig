@@ -1,0 +1,37 @@
+[alias]
+	br = branch
+	bs = flow bugfix start --fetch
+	ci = commit
+	co = checkout
+	db = ! git diff $(git merge-base master HEAD)..HEAD
+	dd = diff develop..HEAD
+	dm = diff master..HEAD
+	dn = diff PreProd..HEAD
+	dob = ! git branch -vv | grep ': gone]' | grep -v '\\*' | awk '{ print $1 }' | xargs -n 1 -r -p git branch -D
+	dp = diff Prod..HEAD
+	fs = flow feature start --fetch
+	ff = flow feature finish
+	hb = ! git hist $(git merge-base master HEAD)..HEAD
+	hd = hist develop..HEAD
+	hist = log --pretty=format:'%C(auto)%h %ad | %s%d [%an]' --graph --date=short
+	hm = hist master..HEAD
+	hn = hist PreProd..HEAD
+	hp = hist Prod..HEAD
+	mb = merge-base master HEAD
+	pf = push --force
+	rib = ! git rebase --interactive $(git merge-base master HEAD)
+	rid = rebase --interactive develop
+	rim = rebase --interactive master
+	rs = flow release start --fetch
+	rf = flow release finish --push --noff-master
+	st = status
+[core]
+	editor = code --wait
+[user]
+	email = edgars.didrihsons@gmail.com
+	name = Edgars Didrihsons
+[fetch]
+	prune = true
+[pull]
+	default = simple
+	rebase = true
