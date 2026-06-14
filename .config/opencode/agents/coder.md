@@ -3,6 +3,8 @@ description: >
   Main development agent. Codes features, routes research/analysis tasks to the
   researcher subagent, and delegates debugging to the debugger subagent.
 mode: primary
+model: opencode-go/kimi-k2.7-code
+temperature: 0.1
 permission:
   read: allow
   edit: allow

@@ -4,6 +4,8 @@ description: >
   agent. Best for: code comprehension, pattern analysis, dependency research,
   architecture understanding, and documentation lookups.
 mode: subagent
+model: opencode-go/deepseek-v4-flash
+temperature: 0.0
 permission:
   read: allow
   edit: deny

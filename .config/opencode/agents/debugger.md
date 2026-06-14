@@ -4,6 +4,8 @@ description: >
   root-cause analysis with suggested fixes. Best for: bug reproduction, error
   investigation, test failures, crash analysis, and performance regression.
 mode: subagent
+model: opencode-go/deepseek-v4-pro
+temperature: 0.1
 permission:
   read: allow
   edit: deny
