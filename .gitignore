@@ -2,3 +2,5 @@
 
 !.gitconfig
 !.gitignore
+
+!.config/opencode/agents/**
