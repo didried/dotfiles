@@ -3,27 +3,27 @@
 	bs = flow bugfix start --fetch
 	ci = commit
 	co = checkout
-	db = ! git diff $(git merge-base master HEAD)..HEAD
+	db = ! git diff $(git merge-base main HEAD)..HEAD
 	dd = diff develop..HEAD
-	dm = diff master..HEAD
+	dm = diff main..HEAD
 	dn = diff PreProd..HEAD
 	dob = ! git branch -vv | grep ': gone]' | grep -v '\\*' | awk '{ print $1 }' | xargs -n 1 -r -p git branch -D
 	dp = diff Prod..HEAD
 	fs = flow feature start --fetch
 	ff = flow feature finish
-	hb = ! git hist $(git merge-base master HEAD)..HEAD
+	hb = ! git hist $(git merge-base main HEAD)..HEAD
 	hd = hist develop..HEAD
-	hist = log --pretty=format:'%C(auto)%h %ad | %s%d [%an]' --graph --date=short
-	hm = hist master..HEAD
+	hist = log --pretty=format:'%C(auto)%h %ad | %s%d [%an]' --graph --date=iso
+	hm = hist main..HEAD
 	hn = hist PreProd..HEAD
 	hp = hist Prod..HEAD
-	mb = merge-base master HEAD
+	mb = merge-base main HEAD
 	pf = push --force
-	rib = ! git rebase --interactive $(git merge-base master HEAD)
+	rib = ! git rebase --interactive $(git merge-base main HEAD)
 	rid = rebase --interactive develop
-	rim = rebase --interactive master
+	rim = rebase --interactive main
 	rs = flow release start --fetch
-	rf = flow release finish --push --noff-master
+	rf = flow release finish --push --noff-main
 	st = status
 [core]
 	editor = code --wait
@@ -35,3 +35,5 @@
 [pull]
 	default = simple
 	rebase = true
+[init]
+	defaultBranch = main
