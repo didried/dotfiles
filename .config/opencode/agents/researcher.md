@@ -6,17 +6,25 @@ description: >
 mode: subagent
 model: opencode-go/deepseek-v4-flash
 temperature: 0.0
+steps: 30
 permission:
   read: allow
   edit: deny
   glob: allow
   grep: allow
   bash:
-    "python*": ask
     "npm ls*": allow
     "cargo doc*": allow
+    "cargo metadata*": allow
     "pip show*": allow
+    "pip list*": allow
     "npm view*": allow
+    "go version": allow
+    "node --version": allow
+    "python --version": allow
+    "ruby --version": allow
+    "java -version": allow
+    "rustc --version": allow
     "*": deny
   task: deny
   webfetch: allow

@@ -6,12 +6,59 @@ description: >
 mode: subagent
 model: opencode-go/deepseek-v4-pro
 temperature: 0.1
+steps: 40
 permission:
   read: allow
   edit: deny
   glob: allow
   grep: allow
-  bash: allow
+  bash:
+    "npm test*": allow
+    "npm run*": allow
+    "npm ls*": allow
+    "pytest*": allow
+    "python -m pytest*": allow
+    "python*": ask
+    "cargo test*": allow
+    "cargo build*": allow
+    "cargo check*": allow
+    "cargo run*": ask
+    "go test*": allow
+    "go build*": allow
+    "go run*": ask
+    "make test*": allow
+    "make build*": allow
+    "make*": allow
+    "cat*": allow
+    "ls*": allow
+    "grep*": allow
+    "find*": allow
+    "head*": allow
+    "tail*": allow
+    "pwd": allow
+    "which*": allow
+    "git status": allow
+    "git diff": allow
+    "git log*": allow
+    "git show*": allow
+    "git branch*": allow
+    "git stash*": ask
+    "curl*": ask
+    "rm*": deny
+    "rmdir*": deny
+    "mv*": ask
+    "cp*": ask
+    "chmod*": ask
+    "chown*": deny
+    "ssh*": deny
+    "scp*": deny
+    "wget*": deny
+    "eval*": deny
+    "source*": deny
+    "echo*": deny
+    "printenv*": deny
+    "env*": deny
+    "*": ask
   task: deny
   webfetch: allow
   websearch: allow

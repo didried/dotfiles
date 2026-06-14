@@ -5,6 +5,7 @@ description: >
 mode: subagent
 model: opencode-go/deepseek-v4-pro
 temperature: 0.7
+steps: 30
 permission:
   read: allow
   edit: deny
